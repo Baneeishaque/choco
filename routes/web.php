@@ -14,10 +14,16 @@
 Route::get('/', function () {
     return view('index');
 });
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/grid_blog', function () {
+    return view('grid-blog');
+});
+Route::get('/contact-us',function(){
+    return view('contact-us');
+});
+Route::get('/grid_products', 'HomeController@products');
 // admin routes
+Auth::routes();
 Route::get('/admin', 'HomeController@admin');
 Route::get('/admin/products', 'ProductController@index');
 Route::get('product/create', 'ProductController@create');

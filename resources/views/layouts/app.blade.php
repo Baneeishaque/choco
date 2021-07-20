@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
+<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- CSRF Token -->
@@ -10,18 +10,10 @@
 
     <title>{{ config('app.name', 'MontealBan Chocolates') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <!-- integration from here -->
+    
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
     <script src="{{ asset('js/3ts2ksMwXvKRuG480KNifJ2_JNM.js') }}"></script>
-    <link rel="icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/favicon.ico')}}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CLato%7CKalam:300,400,700%7CGreat+Vibes">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fonts.css') }}">
@@ -90,7 +82,7 @@
                                         <div class="unit-left"><span class="icon linearicons-map-marker"></span></div>
                                         <div class="unit-body"><a href="contact-us.html">Darussalam Complex, Puthupparamba Towm<br/>Puthupparamba PO,Kottakkal</a></div>
                                     </div>
-                                </div><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="grid-blog.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a>
+                                </div><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="{{ url('/grid_blog') }}"><span class="icon mdi mdi-email-outline"></span>Get in touch</a>
                             </div>
                             <!-- RD Navbar Panel-->
                             <div class="rd-navbar-panel">
@@ -98,33 +90,34 @@
                                 <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
                                 <!-- RD Navbar Brand-->
                                 <div class="rd-navbar-brand">
-                                    <a class="brand" href="index.html"><img class="brand-logo-dark" src="{{asset('images/logo-default-231x49.jpg')}}" alt="" width="231" height="49" srcset="images/logo-default-231x49.png 2x" /><img class="brand-logo-light" src="images/logo-inverse-231x49.png"
-                                            alt="" width="231" height="49" srcset="images/logo-inverse-231x49.png 2x" /></a>
+                                    <a class="brand" href="{{url('/')}}">
+                                        <img class="brand-logo-dark" src="{{asset('images/logo-default-231x49.jpg')}}" alt="default logo" width="231" height="49" srcset="images/logo-default-231x49.png 2x" />
+                                        <img class="brand-logo-light" src="images/logo-default-231x49.png" alt="inverse logo" width="231" height="49" srcset="images/logo-default-231x49.png 2x" /></a>
                                 </div>
                             </div>
-                            <div class="rd-navbar-button"><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="grid-blog.html"><span class="icon mdi mdi-email-outline"></span>Get in touch</a></div>
+                            <div class="rd-navbar-button"><a class="button button-sm button-icon button-icon-left button-default-outline-3 button-zakaria" href="{{ url('/grid_blog') }}"><span class="icon mdi mdi-email-outline"></span>Get in touch</a></div>
                         </div>
                     </div>
                     <div class="rd-navbar-main-outer">
                         <div class="rd-navbar-main">
                             <div class="rd-navbar-nav-wrap">
                                 <!-- RD Navbar Nav-->
-                                <ul class="rd-navbar-nav">
-                                    <li class="rd-nav-item active"><a class="rd-nav-link" href="index.html">Home</a>
+                                <ul class="rd-navbar-nav" id="nav-rd">
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url('/') }}">Home</a>
                                     </li>
                                     <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="grid-gallery.html">Gallery</a></li> -->
                                     <!-- <li class="rd-nav-item"><a class="rd-nav-link" href="what-we-offer.html">What We Offer</a> -->
                                     <!-- RD Navbar Dropdown-->
 
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="grid-shop.html">Products</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url('/grid_products')}}">Products</a>
                                         <!-- RD Navbar Dropdown-->
                                     </li>
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="grid-blog.html">Blog</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url('/grid_blog') }}">Blog</a>
                                         <!-- RD Navbar Dropdown-->
                                     </li>
 
-                                    <li class="rd-nav-item"><a class="rd-nav-link" href="contact-us.html">Contact Us</a>
+                                    <li class="rd-nav-item"><a class="rd-nav-link" href="{{ url('/contact-us') }}">Contact Us</a>
                                     </li>
                                 </ul>
                             </div>
@@ -182,7 +175,7 @@
                                 <li><a href="index.html#">FAQ</a></li>
                                 <li><a href="contact-us.html">Contact Us</a></li>
                                 <li><a href="what-we-offer.html">What We Offer</a></li>
-                                <li><a href="grid-blog.html">Our Blog</a></li>
+                                <li><a href="{{ url('/grid_blog') }}">Our Blog</a></li>
                             </ul>
                         </div>
                         <div class="col-sm-6 col-md-5 col-lg-4 col-xl-3 wow fadeInRight" data-wow-delay=".2s">
@@ -239,7 +232,22 @@
 
     <script src="{{ asset('js/core.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+    <script>
 
+           
+        
+
+    jQuery(function($) {
+        var path = window.location.href; 
+            // because the 'href' property of the DOM element is the absolute path
+        $("#nav-rd a").each(function() {
+            if (this.href === path) {
+                $(this).closest('li').addClass('active');
+            }
+        });
+    });
+
+    </script>
 </body>
 
 </html>

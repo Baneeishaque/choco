@@ -25,6 +25,36 @@
         <!-- Owl Carousel-->
         <div class="owl-carousel owl-style-10" data-items="1" data-sm-items="2" data-lg-items="3" data-margin="30" data-dots="true" data-mouse-drag="false">
             <!-- Product-->
+            
+            
+                @foreach ($products as $key=>$value)
+                    
+                        <article class="product">
+                            <div class="product-body">
+                                @foreach ($images as $image)
+                                    @if($image->product_id == $value->id)
+                                        
+                                        <div class="product-figure"><img src="{{ url('images/product_images/'.$image->images) }}" alt="{{$image->images}}" width="157" height="127" />
+                                        </div>
+                                    @break
+                                    @endif
+                                @endforeach
+                                <h5 class="product-title"><a>{{$value->name}}</a></h5>
+                                <div class="product-price-wrap">
+                                </div>
+                            </div><span class="product-badge product-badge-new">New</span>
+                            <div class="product-button-wrap">
+                            </div>
+                            <div class="product-button-wrap">
+                                <div class="product-button">
+                                    <a class="button button-primary-2 button-zakaria fl-bigmug-line-search74" href="grid-shop.html"></a>
+                                </div>
+                                <!-- <div class="product-button"><a class="button button-primary-2 button-zakaria fl-bigmug-line-shopping202" href="cart-page.html"></a></div> -->
+                            </div>
+                        </article>
+                    
+                @endforeach
+           
             <article class="product">
                 <div class="product-body">
                     <div class="product-figure"><img src="images/product-2-157x127.png" alt="" width="157" height="127" />
